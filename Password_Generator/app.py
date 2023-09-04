@@ -19,9 +19,9 @@ if generation_mode == "Manual":
     n_special_chars = st.number_input("Number of Special Characters", min_value=0, step=1, value=0)
 elif generation_mode == "Automatic":
     password_length = st.number_input("Password Length", min_value=1, step=1, value=8)
-    total_chars = random.randint(1, password_length)
-    alphabets = random.randint(0, total_chars)
-    digits = random.randint(0, abs(total_chars - alphabets))
+    total_chars = random.randint(1, password_length+1)
+    alphabets = random.randint(0, total_chars+1)
+    digits = random.randint(0, abs(total_chars - alphabets)+1)
     special_chars = abs(total_chars - (alphabets + digits))
 
 
